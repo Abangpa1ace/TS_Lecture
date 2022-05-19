@@ -63,7 +63,7 @@ class AddressBook {
     this.fetchData();
   }
 
-  fetchData() {
+  fetchData(): void {
     fetchContacts().then(response => {
       this.contacts = response;
     });
@@ -73,7 +73,6 @@ class AddressBook {
   findContactByName(name: string): Contact[] {
     return this.contacts.filter(contact => contact.name === name);
   }
-
   findContactByAddress(address: string): Contact[] {
     return this.contacts.filter(contact => contact.address === address);
   }
